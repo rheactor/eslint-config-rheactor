@@ -28,7 +28,7 @@ module.exports = {
     "import/no-absolute-path": "error",
     // "import/no-amd": "off",
     "import/no-anonymous-default-export": "error",
-    "import/no-commonjs": "warn",
+    // "import/no-commonjs": "off",
     // "import/no-cycle": "off",
     "import/no-default-export": "error",
     "import/no-deprecated": "warn",
