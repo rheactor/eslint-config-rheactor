@@ -24,7 +24,7 @@ module.exports = {
 
   overrides: [
     {
-      files: "*.js",
+      files: "*.{js,ts}",
       rules: {
         "no-undef": "off",
         "import/no-unused-modules": "off",
@@ -32,7 +32,7 @@ module.exports = {
       },
     },
     {
-      files: "**/*Component.{js,jsx,ts,tsx}",
+      files: "**/*{Component,Service}.{js,jsx,ts,tsx}",
       rules: {
         "unicorn/filename-case": [
           "error",
