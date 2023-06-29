@@ -7,6 +7,7 @@ module.exports = {
     "./typescript",
     "./unicorn",
     "./compat",
+    "./promise",
   ],
 
   env: {
