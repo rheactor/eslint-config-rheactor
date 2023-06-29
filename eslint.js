@@ -133,4 +133,13 @@ module.exports = {
     strict: "warn",
     yoda: "warn",
   },
+
+  overrides: [
+    {
+      files: "*.{js,ts}",
+      rules: {
+        "no-undef": "off",
+      },
+    },
+  ],
 };
