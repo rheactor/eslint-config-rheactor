@@ -1,0 +1,25 @@
+{
+  "name": "@rheactor/eslint-config-rheactor",
+  "version": "1.0.0",
+  "description": "Rheactor configs repository.",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "react.js"
+  ],
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
