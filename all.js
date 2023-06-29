@@ -1,3 +1,10 @@
 module.exports = {
-  extends: ["./eslint", "./react", "./import", "./typescript", "./unicorn"],
+  extends: [
+    "./eslint",
+    "./react",
+    "./import",
+    "./typescript",
+    "./unicorn",
+    "./compat",
+  ],
 };
