@@ -1,5 +1,6 @@
 module.exports = {
   plugins: ["import"],
+
   rules: {
     "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     // "import/default": "off",
@@ -104,4 +105,13 @@ module.exports = {
     // "import/prefer-default-export": "off",
     // "import/unambiguous": "off",
   },
+
+  overrides: [
+    {
+      files: ["**/*.config.{js,ts}"],
+      rules: {
+        "import/no-unused-modules": "off",
+      },
+    },
+  ],
 };

@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["eslint:recommended"],
+
   rules: {
     "accessor-pairs": "warn",
     "array-callback-return": "warn",

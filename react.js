@@ -1,17 +1,18 @@
 module.exports = {
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
   },
-  env: {
-    browser: true,
-  },
+
   settings: {
     react: {
       version: "detect",
     },
   },
+
   rules: {
     "react/boolean-prop-naming": [
       "warn",
