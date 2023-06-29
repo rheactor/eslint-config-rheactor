@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     "./eslint",
     "./react",
+    "./reactHooks",
     "./import",
     "./typescript",
     "./unicorn",
