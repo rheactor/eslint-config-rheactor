@@ -8,6 +8,7 @@ module.exports = {
     "./unicorn",
     "./compat",
     "./promise",
+    "./tailwind",
   ],
 
   env: {
