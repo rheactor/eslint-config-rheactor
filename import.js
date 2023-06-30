@@ -113,5 +113,11 @@ module.exports = {
         "import/no-unused-modules": "off",
       },
     },
+    {
+      files: ["**/{page,layout,route}.{ts,tsx}"],
+      rules: {
+        "import/no-default-export": "off",
+      },
+    },
   ],
 };
