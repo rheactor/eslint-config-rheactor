@@ -4,13 +4,14 @@ module.exports = {
   rules: {
     "accessor-pairs": "warn",
     "array-callback-return": "warn",
+    "arrow-body-style": ["warn", "as-needed"],
     "block-scoped-var": "warn",
     "class-methods-use-this": "warn",
-    "consistent-return": "warn",
+    // "consistent-return": "off", // treated by typescript-eslint
     "consistent-this": "warn",
     "default-case-last": "warn",
     "default-case": "warn",
-    "default-param-last": "warn",
+    // "default-param-last": "off", // treated by typescript-eslint
     "func-style": "warn",
     "generator-star-spacing": "warn",
     "grouped-accessor-pairs": "warn",
@@ -41,7 +42,7 @@ module.exports = {
     "no-label-var": "warn",
     "no-lone-blocks": "warn",
     "no-lonely-if": "warn",
-    "no-loop-func": "warn",
+    // "no-loop-func": "off",
     "no-multi-assign": "warn",
     "no-multi-str": "warn",
     "no-negated-condition": "warn",

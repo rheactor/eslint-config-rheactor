@@ -85,12 +85,7 @@ module.exports = {
       },
     ],
     // "react/jsx-max-props-per-line": "off/prettier",
-    "react/jsx-newline": [
-      "warn",
-      {
-        prevent: false,
-      },
-    ],
+    // "react/jsx-newline": "off/prettier",
     // "react/jsx-no-bind": "off",
     // "react/jsx-no-comment-textnodes": "off",
     "react/jsx-no-constructed-context-values": "error",
@@ -175,4 +170,13 @@ module.exports = {
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "warn",
   },
+
+  overrides: [
+    {
+      files: ["**/{page,layout,route}.{ts,tsx}"],
+      rules: {
+        "react/function-component-definition": "off",
+      },
+    },
+  ],
 };

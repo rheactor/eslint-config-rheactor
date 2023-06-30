@@ -3,6 +3,10 @@ module.exports = {
   extends: ["plugin:unicorn/recommended"],
 
   rules: {
+    "unicorn/number-literal-case": "off", // prettier conflict
+    "unicorn/no-nested-ternary": "off", // prettier conflict
+    "unicorn/better-regex": "off", // regexp conflict
+    "unicorn/no-null": "off",
     "unicorn/filename-case": [
       "error",
       {
@@ -26,12 +30,13 @@ module.exports = {
       },
     },
     {
-      files: "**/*{Component,Service}.{js,jsx,ts,tsx}",
+      files: "**/*{Component,Service,Context}.{js,jsx,ts,tsx}",
       rules: {
         "unicorn/filename-case": [
           "error",
           {
             case: "pascalCase",
+            ignore: ["^DOM"],
           },
         ],
       },
