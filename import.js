@@ -20,7 +20,7 @@ module.exports = {
     // "import/no-commonjs": "off",
     // "import/no-cycle": "off",
     "import/no-default-export": "error",
-    "import/no-deprecated": "warn",
+    // "import/no-deprecated": "off",
     "import/no-duplicates": "error",
     // "import/no-dynamic-require": "off",
     "import/no-empty-named-blocks": "warn",
@@ -45,13 +45,7 @@ module.exports = {
       },
     ],
     // "import/no-unresolved": "off",
-    "import/no-unused-modules": [
-      "error",
-      {
-        missingExports: true,
-        unusedExports: true,
-      },
-    ],
+    // "import/no-unused-modules": "off",
     "import/no-useless-path-segments": "warn",
     "import/no-webpack-loader-syntax": "warn",
     "import/order": [
@@ -95,12 +89,6 @@ module.exports = {
   },
 
   overrides: [
-    {
-      files: ["*.{js,ts}", "**/{page,layout,route}.{ts,tsx}"],
-      rules: {
-        "import/no-unused-modules": "off",
-      },
-    },
     {
       files: ["**/{page,layout,route}.{ts,tsx}"],
       rules: {
