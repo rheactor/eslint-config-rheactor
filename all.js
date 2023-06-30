@@ -9,6 +9,7 @@ module.exports = {
     "./compat",
     "./promise",
     "./tailwind",
+    "./regexp",
   ],
 
   env: {
