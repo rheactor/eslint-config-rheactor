@@ -108,7 +108,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ["*.{js,ts}"],
+      files: ["*.{js,ts}", "**/{page,layout,route}.{ts,tsx}"],
       rules: {
         "import/no-unused-modules": "off",
       },
