@@ -7,19 +7,7 @@ module.exports = {
     // "import/dynamic-import-chunkname": "off",
     "import/export": "error",
     // "import/exports-last": "off",
-    "import/extensions": [
-      "error",
-      "always",
-      {
-        ignorePackages: true,
-        pattern: {
-          js: "never",
-          jsx: "never",
-          ts: "never",
-          tsx: "never",
-        },
-      },
-    ],
+    // "import/extensions": "off",
     // "import/first": "off",
     // "import/group-exports": "off",
     // "import/max-dependencies": "off",
@@ -56,7 +44,7 @@ module.exports = {
         allow: ["**/*.{css,scss,json}"],
       },
     ],
-    "import/no-unresolved": "warn",
+    // "import/no-unresolved": "off",
     "import/no-unused-modules": [
       "error",
       {

@@ -1,15 +1,14 @@
 module.exports = {
   extends: [
     "./eslint",
+    "./import",
+    "./promise",
     "./react",
     "./reactHooks",
-    "./import",
+    "./regexp",
+    "./tailwind",
     "./typescript",
     "./unicorn",
-    "./compat",
-    "./promise",
-    "./tailwind",
-    "./regexp",
   ],
 
   env: {
