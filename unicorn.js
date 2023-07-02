@@ -30,7 +30,7 @@ module.exports = {
       },
     },
     {
-      files: "**/*{Component,Service,Context}.{js,jsx,ts,tsx}",
+      files: "**/*{Component,Service,Context,Model}.{js,jsx,ts,tsx}",
       rules: {
         "unicorn/filename-case": [
           "error",
