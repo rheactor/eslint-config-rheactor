@@ -7,12 +7,7 @@ module.exports = {
     "unicorn/no-nested-ternary": "off", // prettier conflict
     "unicorn/better-regex": "off", // regexp conflict
     "unicorn/no-null": "off",
-    "unicorn/filename-case": [
-      "error",
-      {
-        case: "camelCase",
-      },
-    ],
+    "unicorn/filename-case": ["error", { case: "kebabCase" }],
   },
 
   overrides: [
