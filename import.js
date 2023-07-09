@@ -92,10 +92,9 @@ module.exports = {
     {
       files: [
         "**/{layout,page,loading,not-found,error,global-error,route,template,default}.{ts,tsx}",
+        "*.config.ts",
       ],
-      rules: {
-        "import/no-default-export": "off",
-      },
+      rules: { "import/no-default-export": "off" },
     },
   ],
 };
