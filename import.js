@@ -90,7 +90,9 @@ module.exports = {
 
   overrides: [
     {
-      files: ["**/{page,layout,route}.{ts,tsx}"],
+      files: [
+        "**/{layout,page,loading,not-found,error,global-error,route,template,default}.{ts,tsx}",
+      ],
       rules: {
         "import/no-default-export": "off",
       },

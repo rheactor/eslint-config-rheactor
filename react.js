@@ -85,7 +85,7 @@ module.exports = {
       },
     ],
     // "react/jsx-max-props-per-line": "off/prettier",
-    // "react/jsx-newline": "off/prettier",
+    "react/jsx-newline": ["error", { prevent: false }],
     // "react/jsx-no-bind": "off",
     // "react/jsx-no-comment-textnodes": "off",
     "react/jsx-no-constructed-context-values": "error",
@@ -173,7 +173,9 @@ module.exports = {
 
   overrides: [
     {
-      files: ["**/{page,layout,route}.{ts,tsx}"],
+      files: [
+        "**/{layout,page,loading,not-found,error,global-error,route,template,default}.{ts,tsx}",
+      ],
       rules: {
         "react/function-component-definition": "off",
       },
