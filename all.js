@@ -2,9 +2,9 @@ module.exports = {
   extends: [
     "./eslint",
     "./import",
+    "./next",
     "./promise",
     "./react",
-    "./reactHooks",
     "./regexp",
     "./tailwind",
     "./typescript",
