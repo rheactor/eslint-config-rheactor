@@ -93,6 +93,7 @@ module.exports = {
       files: [
         "**/{layout,page,loading,not-found,error,global-error,route,template,default}.{ts,tsx}",
         "*.config.ts",
+        "middleware.ts",
       ],
       rules: { "import/no-default-export": "off" },
     },

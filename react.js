@@ -30,7 +30,7 @@ module.exports = {
         destructureInSignature: "always",
       },
     ],
-    "react/display-name": "warn",
+    "react/display-name": "off",
     // "react/forbid-component-props": "off",
     // "react/forbid-dom-props": "off",
     // "react/forbid-elements": "off",
