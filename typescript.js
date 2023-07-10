@@ -45,13 +45,7 @@ module.exports = {
     ],
     "@typescript-eslint/no-unnecessary-qualifier": "warn",
     "@typescript-eslint/no-unused-expressions": "warn",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        varsIgnorePattern: "^_",
-        argsIgnorePattern: "^_",
-      },
-    ],
+    // "@typescript-eslint/no-unused-vars": "off/replaced by unused-imports/no-unused-vars",
     "@typescript-eslint/no-useless-empty-export": "warn",
     "@typescript-eslint/prefer-readonly": "warn",
     "@typescript-eslint/prefer-regexp-exec": "warn",

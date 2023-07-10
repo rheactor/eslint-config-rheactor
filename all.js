@@ -9,6 +9,7 @@ module.exports = {
     "./tailwind",
     "./typescript",
     "./unicorn",
+    "./unused-imports",
   ],
 
   env: {
