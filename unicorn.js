@@ -29,11 +29,14 @@ module.exports = {
       rules: {
         "unicorn/filename-case": [
           "error",
-          {
-            case: "pascalCase",
-            ignore: ["^DOM"],
-          },
+          { case: "pascalCase", ignore: ["^DOM"] },
         ],
+      },
+    },
+    {
+      files: "**/use*.{ts,tsx}",
+      rules: {
+        "unicorn/filename-case": ["error", { case: "camelCase" }],
       },
     },
   ],
