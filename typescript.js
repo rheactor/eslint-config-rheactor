@@ -2,16 +2,10 @@ module.exports = {
   plugins: ["@typescript-eslint"],
 
   extends: [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/strict",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
   ],
-
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "./tsconfig.json",
-  },
 
   rules: {
     "@typescript-eslint/array-type": ["warn", { default: "array-simple" }],
@@ -58,5 +52,9 @@ module.exports = {
     "@typescript-eslint/sort-type-constituents": "warn",
     "@typescript-eslint/switch-exhaustiveness-check": "warn",
     "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      { checksVoidReturn: false },
+    ],
   },
 };

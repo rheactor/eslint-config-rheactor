@@ -75,7 +75,7 @@ module.exports = {
     "no-useless-rename": "warn",
     "no-useless-return": "warn",
     "no-var": "warn",
-    "no-void": "warn",
+    "no-void": "off",
     "object-shorthand": "warn",
     "operator-assignment": "warn",
     "padding-line-between-statements": [

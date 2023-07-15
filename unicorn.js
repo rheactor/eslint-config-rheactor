@@ -3,6 +3,7 @@ module.exports = {
   extends: ["plugin:unicorn/recommended"],
 
   rules: {
+    "unicorn/no-empty-file": "off", // bug
     "unicorn/number-literal-case": "off", // prettier conflict
     "unicorn/no-nested-ternary": "off", // prettier conflict
     "unicorn/better-regex": "off", // regexp conflict

@@ -3,13 +3,6 @@ module.exports = {
     jest: { version: 29 },
   },
 
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "./tsconfig.json",
-  },
-
   overrides: [
     {
       files: ["**/*.test.{ts,tsx}"],
