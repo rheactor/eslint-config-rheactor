@@ -9,6 +9,16 @@ module.exports = {
     "unicorn/better-regex": "off", // regexp conflict
     "unicorn/no-null": "off",
     "unicorn/filename-case": ["error", { case: "kebabCase" }],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        allowList: {
+          doc: true,
+          args: true,
+          params: true,
+        },
+      },
+    ],
   },
 
   overrides: [
