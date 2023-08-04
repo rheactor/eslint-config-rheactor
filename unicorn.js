@@ -8,12 +8,19 @@ module.exports = {
     "unicorn/no-nested-ternary": "off", // prettier conflict
     "unicorn/better-regex": "off", // regexp conflict
     "unicorn/no-null": "off",
-    "unicorn/filename-case": ["error", { case: "kebabCase" }],
+    "unicorn/filename-case": [
+      "error",
+      {
+        case: "kebabCase",
+        ignore: [/\.test\.tsx?$/],
+      },
+    ],
     "unicorn/prevent-abbreviations": [
       "error",
       {
         allowList: {
           doc: true,
+          ev: true,
           args: true,
           params: true,
         },
