@@ -2,7 +2,7 @@ module.exports = {
   extends: [
     "./eslint",
     "./import",
-    "./jest",
+    "./vitest",
     "./promise",
     "./regexp",
     "./typescript",
@@ -20,6 +20,5 @@ module.exports = {
   env: {
     es6: true,
     node: true,
-    "jest/globals": true,
   },
 };
