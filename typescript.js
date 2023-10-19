@@ -13,10 +13,7 @@ module.exports = {
       "warn",
       { fixMixedExportsWithInlineTypeSpecifier: false },
     ],
-    "@typescript-eslint/consistent-type-imports": [
-      "warn",
-      { fixStyle: "inline-type-imports" },
-    ],
+    "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/default-param-last": "warn",
     "@typescript-eslint/explicit-member-accessibility": "warn",
     "@typescript-eslint/member-ordering": "warn",
@@ -51,9 +48,12 @@ module.exports = {
     "@typescript-eslint/return-await": "warn",
     "@typescript-eslint/sort-type-constituents": "warn",
     "@typescript-eslint/switch-exhaustiveness-check": "warn",
-    "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/strict-boolean-expressions": [
+      "warn",
+      { allowNullableBoolean: true },
+    ],
     "@typescript-eslint/no-misused-promises": [
-      "error",
+      "warn",
       { checksVoidReturn: false },
     ],
   },

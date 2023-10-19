@@ -3,5 +3,6 @@ module.exports = {
 
   rules: {
     "tailwindcss/no-custom-classname": "off", // bad-performance
+    "tailwindcss/classnames-order": "off",
   },
 };

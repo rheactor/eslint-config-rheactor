@@ -8,53 +8,16 @@ module.exports = {
     "unicorn/no-nested-ternary": "off", // prettier conflict
     "unicorn/better-regex": "off", // regexp conflict
     "unicorn/no-null": "off",
-    "unicorn/filename-case": [
-      "error",
-      {
-        case: "kebabCase",
-        ignore: [/\.test\.tsx?$/],
-      },
-    ],
-    "unicorn/prevent-abbreviations": [
-      "error",
-      {
-        allowList: {
-          doc: true,
-          ev: true,
-          args: true,
-          params: true,
-        },
-      },
-    ],
+    "unicorn/filename-case": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-await-expression-member": "off",
   },
 
   overrides: [
     {
-      files: "*.d.ts",
-      rules: {
-        "unicorn/filename-case": "off",
-        "unicorn/prevent-abbreviations": "off",
-      },
-    },
-    {
       files: "*.{js,ts}",
       rules: {
         "unicorn/prefer-module": "off",
-      },
-    },
-    {
-      files: "**/*{Component,Service,Context,Model}?(.test).{js,jsx,ts,tsx}",
-      rules: {
-        "unicorn/filename-case": [
-          "error",
-          { case: "pascalCase", ignore: ["^DOM"] },
-        ],
-      },
-    },
-    {
-      files: "**/use*.{ts,tsx}",
-      rules: {
-        "unicorn/filename-case": ["error", { case: "camelCase" }],
       },
     },
   ],

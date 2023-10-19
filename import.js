@@ -19,7 +19,7 @@ module.exports = {
     "import/no-anonymous-default-export": "error",
     // "import/no-commonjs": "off",
     // "import/no-cycle": "off",
-    "import/no-default-export": "error",
+    "import/no-default-export": "off",
     // "import/no-deprecated": "off",
     "import/no-duplicates": "error",
     // "import/no-dynamic-require": "off",
@@ -32,7 +32,7 @@ module.exports = {
     "import/no-named-as-default": "warn",
     // "import/no-named-default": "off",
     // "import/no-named-export": "off",
-    "import/no-namespace": "warn",
+    "import/no-namespace": "off",
     // "import/no-nodejs-modules": "off",
     "import/no-relative-packages": "warn",
     // "import/no-relative-parent-imports": "off",
@@ -87,15 +87,4 @@ module.exports = {
     // "import/prefer-default-export": "off",
     // "import/unambiguous": "off",
   },
-
-  overrides: [
-    {
-      files: [
-        "**/{layout,page,loading,not-found,error,global-error,route,template,default}.{ts,tsx}",
-        "*.config.ts",
-        "middleware.ts",
-      ],
-      rules: { "import/no-default-export": "off" },
-    },
-  ],
 };

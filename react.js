@@ -36,13 +36,7 @@ module.exports = {
     // "react/forbid-elements": "off",
     // "react/forbid-foreign-prop-types": "off",
     // "react/forbid-prop-types": "off",
-    "react/function-component-definition": [
-      "warn",
-      {
-        namedComponents: "arrow-function",
-        unnamedComponents: "arrow-function",
-      },
-    ],
+    "react/function-component-definition": "off",
     "react/hook-use-state": "warn",
     "react/iframe-missing-sandbox": "warn",
     "react/jsx-boolean-value": "warn",
@@ -90,12 +84,7 @@ module.exports = {
     // "react/jsx-no-comment-textnodes": "off",
     "react/jsx-no-constructed-context-values": "error",
     "react/jsx-no-duplicate-props": "error",
-    "react/jsx-no-leaked-render": [
-      "warn",
-      {
-        validStrategies: ["coerce", "ternary"],
-      },
-    ],
+    "react/jsx-no-leaked-render": "off",
     // "react/jsx-no-literals": "off",
     "react/jsx-no-script-url": "warn",
     "react/jsx-no-target-blank": "warn",
@@ -116,7 +105,7 @@ module.exports = {
     // "react/no-arrow-function-lifecycle": "off",
     "react/no-children-prop": "error",
     "react/no-danger-with-children": "error",
-    "react/no-danger": "error",
+    "react/no-danger": "off",
     "react/no-deprecated": "error",
     // "react/no-did-mount-set-state": "off",
     // "react/no-did-update-set-state": "off",
@@ -148,7 +137,7 @@ module.exports = {
     // "react/no-will-update-set-state": "off",
     "react/prefer-es6-class": ["warn", "always"],
     // "react/prefer-exact-props": "off",
-    "react/prefer-read-only-props": "warn",
+    "react/prefer-read-only-props": "off",
     "react/prefer-stateless-function": "warn",
     "react/prop-types": "warn",
     // "react/react-in-jsx-scope": "off",
@@ -170,15 +159,4 @@ module.exports = {
     "react/style-prop-object": "warn",
     "react/void-dom-elements-no-children": "warn",
   },
-
-  overrides: [
-    {
-      files: [
-        "**/{layout,page,loading,not-found,error,global-error,route,template,default}.{ts,tsx}",
-      ],
-      rules: {
-        "react/function-component-definition": "off",
-      },
-    },
-  ],
 };

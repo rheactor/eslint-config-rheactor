@@ -12,7 +12,7 @@ module.exports = {
     "default-case-last": "warn",
     "default-case": "warn",
     // "default-param-last": "off", // treated by typescript-eslint
-    "func-style": "warn",
+    "func-style": ["warn", "declaration"],
     "generator-star-spacing": "warn",
     "grouped-accessor-pairs": "warn",
     "guard-for-in": "warn",
