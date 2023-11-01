@@ -2,7 +2,7 @@ module.exports = {
   plugins: ["import"],
 
   rules: {
-    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     // "import/default": "off",
     // "import/dynamic-import-chunkname": "off",
     "import/export": "error",
