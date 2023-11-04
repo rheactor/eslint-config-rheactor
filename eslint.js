@@ -20,7 +20,6 @@ module.exports = {
     "logical-assignment-operators": "warn",
     "no-alert": "warn",
     "no-array-constructor": "warn",
-    "no-await-in-loop": "warn",
     "no-caller": "warn",
     "no-console": "warn",
     "no-constant-binary-expression": "warn",

@@ -11,6 +11,7 @@ module.exports = {
     "unicorn/filename-case": "off",
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-await-expression-member": "off",
+    "unicorn/no-useless-undefined": ["error", { checkArguments: false }],
   },
 
   overrides: [
