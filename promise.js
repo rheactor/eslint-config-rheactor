@@ -3,8 +3,7 @@ module.exports = {
   extends: ["plugin:promise/recommended"],
 
   rules: {
-    "promise/always-return": ["warn", {
-      ignoreLastCallback: true
-    }],
-  }
+    "promise/always-return": ["warn", { ignoreLastCallback: true }],
+    "promise/no-nesting": "off",
+  },
 };

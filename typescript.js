@@ -56,5 +56,12 @@ module.exports = {
       "warn",
       { checksVoidReturn: false },
     ],
+    "@typescript-eslint/no-invalid-void-type": [
+      "error",
+      {
+        allowInGenericTypeArguments: true,
+        allowAsThisParameter: true,
+      },
+    ],
   },
 };

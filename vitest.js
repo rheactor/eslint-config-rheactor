@@ -1,17 +1,17 @@
 module.exports = {
-  "plugins": ["vitest"],
+  plugins: ["vitest"],
 
-  "overrides": [
+  overrides: [
     {
-      "files": "./**/*.test.ts",
-      "extends": ["plugin:vitest/all"],
-      "rules": {
+      files: "./**/*.test.ts",
+      extends: ["plugin:vitest/all"],
+      rules: {
         "vitest/require-top-level-describe": "off",
         "vitest/no-conditional-expect": "off",
         "vitest/max-expects": "off",
         "vitest/no-conditional-in-test": "off",
-        "vitest/no-conditional-tests": "off"
-      }
-    }
-  ]
-}
+        "vitest/no-conditional-tests": "off",
+      },
+    },
+  ],
+};
