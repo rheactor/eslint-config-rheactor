@@ -72,12 +72,7 @@ module.exports = {
         warnOnDuplicates: true,
       },
     ],
-    "react/jsx-max-depth": [
-      "warn",
-      {
-        max: 8,
-      },
-    ],
+    "react/jsx-max-depth": ["warn", { max: 16 }],
     // "react/jsx-max-props-per-line": "off/prettier",
     "react/jsx-newline": ["error", { prevent: false }],
     // "react/jsx-no-bind": "off",
