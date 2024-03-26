@@ -13,6 +13,7 @@ module.exports = {
     "unicorn/no-useless-undefined": ["error", { checkArguments: false }],
     "unicorn/number-literal-case": "off", // prettier conflict
     "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-unreadable-array-destructuring": "off",
   },
 
   overrides: [

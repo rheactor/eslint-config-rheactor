@@ -126,7 +126,7 @@ module.exports = {
     "require-atomic-updates": "warn",
     "symbol-description": "warn",
     "yield-star-spacing": "warn",
-    camelcase: "warn",
+    camelcase: ["warn", { ignoreImports: true }],
     curly: ["warn", "all"],
     eqeqeq: "warn",
     radix: "warn",
