@@ -14,13 +14,7 @@ module.exports = {
   },
 
   rules: {
-    "react/boolean-prop-naming": [
-      "warn",
-      {
-        rule: "^(is|has|was)[A-Z]([A-Za-z0-9]?)+",
-        validateNested: true,
-      },
-    ],
+    "react/boolean-prop-naming": "off",
     "react/button-has-type": "warn",
     "react/default-props-match-prop-types": "off",
     "react/destructuring-assignment": [
