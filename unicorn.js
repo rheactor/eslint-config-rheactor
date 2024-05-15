@@ -14,6 +14,7 @@ module.exports = {
     "unicorn/number-literal-case": "off", // prettier conflict
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-unreadable-array-destructuring": "off",
+    "unicorn/import-style": "off",
   },
 
   overrides: [
