@@ -15,6 +15,7 @@ module.exports = {
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-unreadable-array-destructuring": "off",
     "unicorn/import-style": "off",
+    "unicorn/prefer-string-raw": "off",
   },
 
   overrides: [
