@@ -1,13 +1,12 @@
 module.exports = {
   extends: [
-    "./eslint",
-    "./import",
-    "./vitest",
-    "./promise",
-    "./regexp",
-    "./typescript",
-    "./unicorn",
-    "./unused-imports",
+    "packages/eslint",
+    "packages/import",
+    "packages/promise",
+    "packages/regexp",
+    "packages/typescript",
+    "packages/unicorn",
+    "packages/unused-imports",
   ],
 
   parser: "@typescript-eslint/parser",
