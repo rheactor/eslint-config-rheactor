@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["base", "packages/vitest"],
+  extends: ["./base", "./packages/vitest"],
 };

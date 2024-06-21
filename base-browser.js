@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ["base", "packages/next", "packages/react", "packages/tailwind"],
+  extends: [
+    "./base",
+    "./packages/next",
+    "./packages/react",
+    "./packages/tailwind",
+  ],
 
   env: {
     es6: true,

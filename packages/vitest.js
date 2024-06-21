@@ -3,7 +3,7 @@ module.exports = {
 
   overrides: [
     {
-      files: "./**/*.test.ts",
+      files: "**/*.test.ts",
       extends: ["plugin:vitest/all"],
       rules: {
         "vitest/max-expects": "off",
