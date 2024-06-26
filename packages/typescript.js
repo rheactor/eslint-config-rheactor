@@ -63,5 +63,11 @@ module.exports = {
         allowAsThisParameter: true,
       },
     ],
+    "@typescript-eslint/unified-signatures": [
+      "error",
+      {
+        ignoreDifferentlyNamedParameters: true,
+      },
+    ],
   },
 };
