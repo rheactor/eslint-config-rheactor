@@ -4,7 +4,7 @@ module.exports = {
   overrides: [
     {
       files: "**/*.test.ts",
-      extends: ["plugin:@vitest/all"],
+      extends: ["plugin:@vitest/legacy-all"],
       rules: {
         "@vitest/max-expects": "off",
         "@vitest/no-conditional-expect": "off",
