@@ -120,7 +120,7 @@ export const recommended = ts.config(
       "no-sequences": "warn",
       "no-shadow": "warn",
       "no-throw-literal": "warn",
-      "no-underscore-dangle": "warn",
+      "no-underscore-dangle": ["warn", { allow: ["_id"] }],
       "no-unneeded-ternary": "warn",
       "no-unused-expressions": ["warn", { enforceForJSX: true }],
       "no-unused-labels": "warn",
@@ -460,3 +460,5 @@ export const recommended = ts.config(
     },
   },
 );
+
+export default recommended;
