@@ -1,2 +1,3 @@
-// eslint-disable-next-line no-restricted-imports
-export { recommended } from "./eslint.config.mjs";
+/* eslint-disable no-restricted-imports */
+export { recommended } from "./rules/recommended.mjs";
+export { vitest } from "./rules/vitest.mjs";
