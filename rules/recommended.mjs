@@ -16,6 +16,17 @@ const compat = new FlatCompat({
   baseDirectory: path.dirname(fileURLToPath(import.meta.url)),
 });
 
+const nextConfigs = [];
+
+try {
+  require.resolve("next");
+  require.resolve("eslint-config-next");
+  nextConfigs.push(compat.extends("eslint-config-next/core-web-vitals"));
+  nextConfigs.push(compat.extends("eslint-config-next/typescript"));
+} catch {
+  // Empty.
+}
+
 export const recommended = ts.config(
   js.configs.recommended,
   ts.configs.recommendedTypeChecked,
@@ -24,8 +35,7 @@ export const recommended = ts.config(
   react.configs.flat["jsx-runtime"],
   regexp.configs["flat/recommended"],
   promise.configs["flat/recommended"],
-  compat.extends("eslint-config-next/core-web-vitals"),
-  compat.extends("eslint-config-next/typescript"),
+  ...nextConfigs,
 
   {
     languageOptions: {
@@ -148,6 +158,7 @@ export const recommended = ts.config(
       "prefer-rest-params": "warn",
       "prefer-spread": "warn",
       "prefer-template": "warn",
+      quotes: ["warn", "double", { allowTemplateLiterals: false }],
       radix: "warn",
       "symbol-description": "warn",
       "unicode-bom": "warn",
