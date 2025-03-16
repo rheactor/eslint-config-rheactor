@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
+import importPlugin from "eslint-plugin-import";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
 import regexp from "eslint-plugin-regexp";
@@ -19,8 +20,8 @@ const compat = new FlatCompat({
 const nextConfigs = [];
 
 try {
-  require.resolve("next");
-  require.resolve("eslint-config-next");
+  import.meta.resolve("next");
+  import.meta.resolve("eslint-config-next");
   nextConfigs.push(compat.extends("eslint-config-next/core-web-vitals"));
   nextConfigs.push(compat.extends("eslint-config-next/typescript"));
 } catch {
@@ -184,6 +185,8 @@ export const recommended = ts.config(
   },
 
   {
+    plugins: { importPlugin },
+
     files: ["**/*.{ts,tsx}"],
 
     rules: {
@@ -204,7 +207,7 @@ export const recommended = ts.config(
       "prefer-promise-reject-errors": "off",
 
       // `import` disables.
-      "import/no-duplicates": "off",
+      "importPlugin/no-duplicates": "off",
 
       // `typescript` disables.
       "@typescript-eslint/no-unused-vars": "off",
@@ -329,38 +332,43 @@ export const recommended = ts.config(
   },
 
   {
+    plugins: { importPlugin },
+
     settings: {
-      "import/parsers": {
+      "importPlugin/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
-      "import/resolver": {
+      "importPlugin/resolver": {
         typescript: { project: "./tsconfig.json" },
         node: true,
       },
     },
 
     rules: {
-      "import/consistent-type-specifier-style": ["warn", "prefer-top-level"],
-      "import/exports-last": "warn",
-      "import/first": "warn",
-      "import/newline-after-import": "warn",
-      "import/no-absolute-path": "warn",
-      "import/no-anonymous-default-export": "warn",
-      "import/no-dynamic-require": "warn",
-      "import/no-empty-named-blocks": "warn",
-      "import/no-extraneous-dependencies": "warn",
-      "import/no-import-module-exports": "warn",
-      "import/no-mutable-exports": "warn",
-      "import/no-named-default": "warn",
-      "import/no-namespace": "warn",
-      "import/no-relative-packages": "warn",
-      "import/no-unassigned-import": [
+      "importPlugin/consistent-type-specifier-style": [
+        "warn",
+        "prefer-top-level",
+      ],
+      "importPlugin/exports-last": "warn",
+      "importPlugin/first": "warn",
+      "importPlugin/newline-after-import": "warn",
+      "importPlugin/no-absolute-path": "warn",
+      "importPlugin/no-anonymous-default-export": "warn",
+      "importPlugin/no-dynamic-require": "warn",
+      "importPlugin/no-empty-named-blocks": "warn",
+      "importPlugin/no-extraneous-dependencies": "warn",
+      "importPlugin/no-import-module-exports": "warn",
+      "importPlugin/no-mutable-exports": "warn",
+      "importPlugin/no-named-default": "warn",
+      "importPlugin/no-namespace": "warn",
+      "importPlugin/no-relative-packages": "warn",
+      "importPlugin/no-unassigned-import": [
         "warn",
         { allow: ["**/*.{css,scss,json}"] },
       ],
-      "import/no-unused-modules": "warn",
-      "import/no-useless-path-segments": "warn",
-      "import/order": [
+      "importPlugin/no-unused-modules": "warn",
+      "importPlugin/no-useless-path-segments": "warn",
+      "importPlugin/order": [
         "warn",
         {
           alphabetize: {
@@ -396,8 +404,8 @@ export const recommended = ts.config(
           warnOnUnassignedImports: true,
         },
       ],
-      "import/unambiguous": "warn",
-      "import/no-unresolved": "warn",
+      "importPlugin/unambiguous": "warn",
+      "importPlugin/no-unresolved": "warn",
       "no-restricted-imports": ["error", { patterns: ["./*", "../*"] }],
     },
   },
