@@ -159,7 +159,11 @@ export const recommended = ts.config(
       "prefer-rest-params": "warn",
       "prefer-spread": "warn",
       "prefer-template": "warn",
-      quotes: ["warn", "double", { allowTemplateLiterals: false }],
+      quotes: [
+        "warn",
+        "double",
+        { avoidEscape: true, allowTemplateLiterals: false },
+      ],
       radix: "warn",
       "symbol-description": "warn",
       "unicode-bom": "warn",
