@@ -7,6 +7,7 @@ import stylistic from "@stylistic/eslint-plugin";
 import importPlugin from "eslint-plugin-import";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
+import reactHooksAddons from "eslint-plugin-react-hooks-addons";
 import regexp from "eslint-plugin-regexp";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
@@ -332,6 +333,15 @@ export const recommended = ts.config(
       "react/no-unstable-nested-components": "warn",
       "react/self-closing-comp": "warn",
       "react/void-dom-elements-no-children": "warn",
+    },
+  },
+
+  {
+    files: ["**/*.tsx"],
+    plugins: { "react-hooks-addons": reactHooksAddons },
+
+    rules: {
+      "react-hooks-addons/no-unused-deps": ["warn", { effectComment: "keep" }],
     },
   },
 
