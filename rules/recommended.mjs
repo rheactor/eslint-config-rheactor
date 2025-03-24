@@ -90,7 +90,7 @@ export const recommended = ts.config(
       "func-style": ["warn", "declaration"],
       "grouped-accessor-pairs": ["warn", "setBeforeGet"],
       "guard-for-in": "warn",
-      "id-length": ["warn", { exceptions: ["_"] }],
+      "id-length": ["warn", { exceptions: ["_", "x", "y", "i", "j"] }],
       "init-declarations": "warn",
       "logical-assignment-operators": [
         "warn",
@@ -363,7 +363,6 @@ export const recommended = ts.config(
         "warn",
         "prefer-top-level",
       ],
-      "importPlugin/exports-last": "warn",
       "importPlugin/first": "warn",
       "importPlugin/newline-after-import": "warn",
       "importPlugin/no-absolute-path": "warn",
