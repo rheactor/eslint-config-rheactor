@@ -17,7 +17,7 @@
     "@stylistic/eslint-plugin": "^4.2.0",
     "eslint": "^9.23.0",
     "eslint-config-next": "15.2.4",
-    "eslint-import-resolver-typescript": "^4.2.5",
+    "eslint-import-resolver-typescript": "^4.3.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.37.4",
@@ -28,7 +28,7 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "eslint-plugin-vitest": "^0.5.4",
     "globals": "^16.0.0",
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0"
   }

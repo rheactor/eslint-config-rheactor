@@ -418,7 +418,6 @@ export const recommended = ts.config(
         },
       ],
       "importPlugin/unambiguous": "warn",
-      "importPlugin/no-unresolved": "warn",
       "no-restricted-imports": ["error", { patterns: ["./*", "../*"] }],
     },
   },
