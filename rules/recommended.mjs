@@ -319,7 +319,7 @@ export const recommended = ts.config(
       ],
       "react/jsx-newline": "warn",
       "react/jsx-no-constructed-context-values": "warn",
-      "react/jsx-no-leaked-render": "warn",
+      "react/jsx-no-leaked-render": ["warn", { validStrategies: ["coerce"] }],
       "react/jsx-no-script-url": "warn",
       "react/jsx-no-target-blank": "warn",
       "react/jsx-no-useless-fragment": "warn",
