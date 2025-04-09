@@ -7,6 +7,7 @@ import stylistic from "@stylistic/eslint-plugin";
 import importPlugin from "eslint-plugin-import";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import reactHooksAddons from "eslint-plugin-react-hooks-addons";
 import regexp from "eslint-plugin-regexp";
 import unicorn from "eslint-plugin-unicorn";
@@ -26,7 +27,7 @@ try {
   nextConfigs.push(compat.extends("eslint-config-next/core-web-vitals"));
   nextConfigs.push(compat.extends("eslint-config-next/typescript"));
 } catch {
-  // Empty.
+  nextConfigs.push(reactHooks.configs["recommended-latest"]);
 }
 
 export const recommended = ts.config(
