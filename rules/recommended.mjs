@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
+import { defineConfig } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import promise from "eslint-plugin-promise";
 import react from "eslint-plugin-react";
@@ -27,10 +28,10 @@ try {
   nextConfigs.push(compat.extends("eslint-config-next/core-web-vitals"));
   nextConfigs.push(compat.extends("eslint-config-next/typescript"));
 } catch {
-  nextConfigs.push(reactHooks.configs["recommended-latest"]);
+  nextConfigs.push(reactHooks.configs.flat["recommended-latest"]);
 }
 
-export const recommended = ts.config(
+export const recommended = defineConfig(
   js.configs.recommended,
   ts.configs.recommendedTypeChecked,
   ts.configs.stylisticTypeChecked,
@@ -42,6 +43,7 @@ export const recommended = ts.config(
 
   {
     languageOptions: {
+      globals: globals.node,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
