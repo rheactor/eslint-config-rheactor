@@ -1,0 +1,3 @@
+{
+  "importantPatterns": ["rules/*.mjs"]
+}

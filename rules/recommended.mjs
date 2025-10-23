@@ -42,6 +42,10 @@ export const recommended = defineConfig(
   ...nextConfigs,
 
   {
+    settings: { react: { version: "19.2" } },
+  },
+
+  {
     languageOptions: {
       globals: globals.node,
       parserOptions: {
