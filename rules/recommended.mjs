@@ -32,6 +32,8 @@ try {
 }
 
 export const recommended = defineConfig(
+  { ignores: ["**/dist/**", "**/node_modules/**"] },
+
   js.configs.recommended,
   ts.configs.recommendedTypeChecked,
   ts.configs.stylisticTypeChecked,
@@ -41,9 +43,7 @@ export const recommended = defineConfig(
   promise.configs["flat/recommended"],
   ...nextConfigs,
 
-  {
-    settings: { react: { version: "19.2" } },
-  },
+  { settings: { react: { version: "19.2" } } },
 
   {
     languageOptions: {
