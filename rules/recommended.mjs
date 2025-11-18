@@ -1,5 +1,5 @@
-import path from "path";
-import { fileURLToPath } from "url";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
@@ -25,8 +25,10 @@ const nextConfigs = [];
 try {
   import.meta.resolve("next");
   import.meta.resolve("eslint-config-next");
-  nextConfigs.push(compat.extends("eslint-config-next/core-web-vitals"));
-  nextConfigs.push(compat.extends("eslint-config-next/typescript"));
+  nextConfigs.push(
+    compat.extends("eslint-config-next/core-web-vitals"),
+    compat.extends("eslint-config-next/typescript"),
+  );
 } catch {
   nextConfigs.push(reactHooks.configs.flat["recommended-latest"]);
 }
@@ -41,6 +43,7 @@ export const recommended = defineConfig(
   react.configs.flat["jsx-runtime"],
   regexp.configs["flat/recommended"],
   promise.configs["flat/recommended"],
+  unicorn.configs.recommended,
   ...nextConfigs,
 
   { settings: { react: { version: "19.2" } } },
@@ -167,11 +170,6 @@ export const recommended = defineConfig(
       "prefer-rest-params": "warn",
       "prefer-spread": "warn",
       "prefer-template": "warn",
-      quotes: [
-        "warn",
-        "double",
-        { avoidEscape: true, allowTemplateLiterals: false },
-      ],
       radix: "warn",
       "symbol-description": "warn",
       "unicode-bom": "warn",
@@ -184,7 +182,7 @@ export const recommended = defineConfig(
     plugins: { stylistic },
 
     rules: {
-      "padding-line-between-statements": [
+      "stylistic/padding-line-between-statements": [
         "warn",
         { blankLine: "always", prev: "*", next: "return" },
         { blankLine: "always", prev: "block-like", next: "*" },
@@ -213,13 +211,9 @@ export const recommended = defineConfig(
       "no-loop-func": "off",
       "no-loss-of-precision": "off",
       "no-redeclare": "off",
-      "no-return-await": "off",
       "no-shadow": "off",
       "no-useless-constructor": "off",
       "prefer-promise-reject-errors": "off",
-
-      // `import` disables.
-      "importPlugin/no-duplicates": "off",
 
       // `typescript` disables.
       "@typescript-eslint/no-unused-vars": "off",
@@ -451,7 +445,6 @@ export const recommended = defineConfig(
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: { globals: globals.builtin },
-    plugins: { unicorn },
     rules: {
       "unicorn/better-regex": "off",
       "unicorn/catch-error-name": "off",
@@ -465,6 +458,11 @@ export const recommended = defineConfig(
       "unicorn/number-literal-case": "off",
       "unicorn/prefer-string-raw": "off",
       "unicorn/prevent-abbreviations": "off",
+      // Duplicates with @typescript-eslint
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-string-starts-ends-with": "off",
+      "unicorn/no-this-assignment": "off",
+      "unicorn/no-useless-switch-case": "off",
     },
   },
 
