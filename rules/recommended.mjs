@@ -427,7 +427,6 @@ export const recommended = defineConfig(
 
     rules: {
       "regexp/hexadecimal-escape": "warn",
-      "regexp/letter-case": "warn",
       "regexp/prefer-escape-replacement-dollar-char": "warn",
       "regexp/prefer-lookaround": "warn",
       "regexp/prefer-named-backreference": "warn",
@@ -437,7 +436,7 @@ export const recommended = defineConfig(
       "regexp/prefer-result-array-groups": "warn",
       "regexp/sort-alternatives": "warn",
       "regexp/sort-character-class-elements": "warn",
-      "regexp/unicode-escape": "warn",
+      "regexp/unicode-escape": ["warn", "unicodeEscape"],
       "regexp/unicode-property": "warn",
     },
   },
