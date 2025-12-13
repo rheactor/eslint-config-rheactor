@@ -7,9 +7,6 @@ import stylistic from "@stylistic/eslint-plugin";
 import { defineConfig } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import promise from "eslint-plugin-promise";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactHooksAddons from "eslint-plugin-react-hooks-addons";
 import regexp from "eslint-plugin-regexp";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
@@ -20,17 +17,121 @@ const compat = new FlatCompat({
   baseDirectory: path.dirname(fileURLToPath(import.meta.url)),
 });
 
-const nextConfigs = [];
+const extraConfigs = [];
 
 try {
-  import.meta.resolve("next");
-  import.meta.resolve("eslint-config-next");
-  nextConfigs.push(
-    compat.extends("eslint-config-next/core-web-vitals"),
-    compat.extends("eslint-config-next/typescript"),
+  import.meta.resolve("react");
+
+  const react = await import("eslint-plugin-react");
+  const reactHooksAddons = await import("eslint-plugin-react-hooks-addons");
+
+  extraConfigs.push(
+    react.default.configs.flat.recommended,
+    react.default.configs.flat["jsx-runtime"],
+
+    { settings: { react: { version: "19.2" } } },
+
+    {
+      files: ["**/*.tsx"],
+      plugins: { react },
+
+      languageOptions: {
+        globals: globals.browser,
+        parserOptions: { ecmaFeatures: { jsx: true } },
+      },
+
+      rules: {
+        "react/button-has-type": "warn",
+        "react/checked-requires-onchange-or-readonly": "warn",
+        "react/destructuring-assignment": "warn",
+        "react/function-component-definition": "warn",
+        "react/hook-use-state": "warn",
+        "react/iframe-missing-sandbox": "warn",
+        "react/jsx-boolean-value": "warn",
+        "react/jsx-child-element-spacing": "warn",
+        "react/jsx-curly-brace-presence": "warn",
+        "react/jsx-fragments": "warn",
+        "react/jsx-handler-names": "warn",
+        "react/jsx-key": [
+          "warn",
+          {
+            checkFragmentShorthand: true,
+            checkKeyMustBeforeSpread: true,
+            warnOnDuplicates: true,
+          },
+        ],
+        "react/jsx-newline": "warn",
+        "react/jsx-no-constructed-context-values": "warn",
+        "react/jsx-no-script-url": "warn",
+        "react/jsx-no-target-blank": "warn",
+        "react/jsx-no-useless-fragment": "warn",
+        "react/jsx-pascal-case": "warn",
+        "react/jsx-props-no-spread-multi": "warn",
+        "react/no-array-index-key": "warn",
+        "react/no-danger": "warn",
+        "react/no-multi-comp": ["warn", { ignoreStateless: true }],
+        "react/no-namespace": "warn",
+        "react/no-this-in-sfc": "warn",
+        "react/no-unstable-nested-components": "warn",
+        "react/self-closing-comp": "warn",
+        "react/void-dom-elements-no-children": "warn",
+      },
+    },
+
+    {
+      files: ["**/*.tsx"],
+      plugins: { "react-hooks-addons": reactHooksAddons.default },
+
+      rules: {
+        "react-hooks-addons/no-unused-deps": [
+          "warn",
+          { effectComment: "keep" },
+        ],
+      },
+    },
   );
+
+  try {
+    import.meta.resolve("next");
+    import.meta.resolve("eslint-config-next");
+
+    extraConfigs.push(
+      compat.extends("eslint-config-next/core-web-vitals"),
+      compat.extends("eslint-config-next/typescript"),
+    );
+  } catch {
+    const reactHooks = await import("eslint-plugin-react-hooks");
+
+    extraConfigs.push(reactHooks.default.configs.flat["recommended-latest"]);
+  }
 } catch {
-  nextConfigs.push(reactHooks.configs.flat["recommended-latest"]);
+  // Empty.
+}
+
+try {
+  import.meta.resolve("vitest");
+
+  const vitestPlugin = await import("eslint-plugin-vitest");
+
+  extraConfigs.push({
+    files: ["tests/**"],
+    plugins: { vitest: vitestPlugin.default },
+    rules: {
+      ...vitestPlugin.default.configs.all.rules,
+      ...vitestPlugin.default.configs.recommended.rules,
+
+      "vitest/prefer-expect-assertions": [
+        "warn",
+        { onlyFunctionsWithAsyncKeyword: true },
+      ],
+    },
+    settings: { vitest: { typecheck: true } },
+    languageOptions: {
+      globals: { ...vitestPlugin.default.environments.env.globals },
+    },
+  });
+} catch {
+  // Empty.
 }
 
 export const recommended = defineConfig(
@@ -39,14 +140,10 @@ export const recommended = defineConfig(
   js.configs.recommended,
   ts.configs.recommendedTypeChecked,
   ts.configs.stylisticTypeChecked,
-  react.configs.flat.recommended,
-  react.configs.flat["jsx-runtime"],
   regexp.configs["flat/recommended"],
   promise.configs["flat/recommended"],
   unicorn.configs.recommended,
-  ...nextConfigs,
-
-  { settings: { react: { version: "19.2" } } },
+  ...extraConfigs,
 
   {
     languageOptions: {
@@ -286,62 +383,6 @@ export const recommended = defineConfig(
       "@typescript-eslint/strict-boolean-expressions": "warn",
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
       "@typescript-eslint/use-unknown-in-catch-callback-variable": "warn",
-    },
-  },
-
-  {
-    files: ["**/*.tsx"],
-    plugins: { react },
-
-    languageOptions: {
-      globals: globals.browser,
-      parserOptions: { ecmaFeatures: { jsx: true } },
-    },
-
-    rules: {
-      "react/button-has-type": "warn",
-      "react/checked-requires-onchange-or-readonly": "warn",
-      "react/destructuring-assignment": "warn",
-      "react/function-component-definition": "warn",
-      "react/hook-use-state": "warn",
-      "react/iframe-missing-sandbox": "warn",
-      "react/jsx-boolean-value": "warn",
-      "react/jsx-child-element-spacing": "warn",
-      "react/jsx-curly-brace-presence": "warn",
-      "react/jsx-fragments": "warn",
-      "react/jsx-handler-names": "warn",
-      "react/jsx-key": [
-        "warn",
-        {
-          checkFragmentShorthand: true,
-          checkKeyMustBeforeSpread: true,
-          warnOnDuplicates: true,
-        },
-      ],
-      "react/jsx-newline": "warn",
-      "react/jsx-no-constructed-context-values": "warn",
-      "react/jsx-no-script-url": "warn",
-      "react/jsx-no-target-blank": "warn",
-      "react/jsx-no-useless-fragment": "warn",
-      "react/jsx-pascal-case": "warn",
-      "react/jsx-props-no-spread-multi": "warn",
-      "react/no-array-index-key": "warn",
-      "react/no-danger": "warn",
-      "react/no-multi-comp": ["warn", { ignoreStateless: true }],
-      "react/no-namespace": "warn",
-      "react/no-this-in-sfc": "warn",
-      "react/no-unstable-nested-components": "warn",
-      "react/self-closing-comp": "warn",
-      "react/void-dom-elements-no-children": "warn",
-    },
-  },
-
-  {
-    files: ["**/*.tsx"],
-    plugins: { "react-hooks-addons": reactHooksAddons },
-
-    rules: {
-      "react-hooks-addons/no-unused-deps": ["warn", { effectComment: "keep" }],
     },
   },
 
