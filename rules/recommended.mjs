@@ -22,12 +22,16 @@ const extraConfigs = [];
 try {
   import.meta.resolve("react");
 
-  const react = await import("eslint-plugin-react");
-  const reactHooksAddons = await import("eslint-plugin-react-hooks-addons");
+  const reactModule = await import("eslint-plugin-react");
+  const react = reactModule.default;
+  const reactHooksAddonsModule = await import(
+    "eslint-plugin-react-hooks-addons"
+  );
+  const reactHooksAddons = reactHooksAddonsModule.default;
 
   extraConfigs.push(
-    react.default.configs.flat.recommended,
-    react.default.configs.flat["jsx-runtime"],
+    react.configs.flat.recommended,
+    react.configs.flat["jsx-runtime"],
 
     { settings: { react: { version: "19.2" } } },
 
@@ -80,7 +84,7 @@ try {
 
     {
       files: ["**/*.tsx"],
-      plugins: { "react-hooks-addons": reactHooksAddons.default },
+      plugins: { "react-hooks-addons": reactHooksAddons },
 
       rules: {
         "react-hooks-addons/no-unused-deps": [
@@ -100,9 +104,10 @@ try {
       compat.extends("eslint-config-next/typescript"),
     );
   } catch {
-    const reactHooks = await import("eslint-plugin-react-hooks");
+    const reactHooksModule = await import("eslint-plugin-react-hooks");
+    const reactHooks = reactHooksModule.default;
 
-    extraConfigs.push(reactHooks.default.configs.flat["recommended-latest"]);
+    extraConfigs.push(reactHooks.configs.flat["recommended-latest"]);
   }
 } catch {
   // Empty.
