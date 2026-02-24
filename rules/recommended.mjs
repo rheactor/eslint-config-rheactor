@@ -24,9 +24,7 @@ try {
 
   const reactModule = await import("eslint-plugin-react");
   const react = reactModule.default;
-  const reactHooksAddonsModule = await import(
-    "eslint-plugin-react-hooks-addons"
-  );
+  const reactHooksAddonsModule = await import("eslint-plugin-react-hooks-addons");
   const reactHooksAddons = reactHooksAddonsModule.default;
 
   extraConfigs.push(
@@ -87,10 +85,7 @@ try {
       plugins: { "react-hooks-addons": reactHooksAddons },
 
       rules: {
-        "react-hooks-addons/no-unused-deps": [
-          "warn",
-          { effectComment: "keep" },
-        ],
+        "react-hooks-addons/no-unused-deps": ["warn", { effectComment: "keep" }],
       },
     },
   );
@@ -125,10 +120,7 @@ try {
       ...vitestPlugin.default.configs.all.rules,
       ...vitestPlugin.default.configs.recommended.rules,
 
-      "vitest/prefer-expect-assertions": [
-        "warn",
-        { onlyFunctionsWithAsyncKeyword: true },
-      ],
+      "vitest/prefer-expect-assertions": ["warn", { onlyFunctionsWithAsyncKeyword: true }],
     },
     settings: { vitest: { typecheck: true } },
     languageOptions: {
@@ -179,10 +171,7 @@ export const recommended = defineConfig(
       "no-unmodified-loop-condition": "warn",
       "no-unreachable-loop": "warn",
       "no-unsafe-negation": ["warn", { enforceForOrderingRelations: true }],
-      "no-unsafe-optional-chaining": [
-        "warn",
-        { disallowArithmeticOperators: true },
-      ],
+      "no-unsafe-optional-chaining": ["warn", { disallowArithmeticOperators: true }],
       "no-useless-assignment": "warn",
       "require-atomic-updates": "warn",
 
@@ -204,11 +193,7 @@ export const recommended = defineConfig(
       "guard-for-in": "warn",
       "id-length": ["warn", { exceptions: ["_", "x", "y", "i", "j"] }],
       "init-declarations": "off",
-      "logical-assignment-operators": [
-        "warn",
-        "always",
-        { enforceForIfStatements: true },
-      ],
+      "logical-assignment-operators": ["warn", "always", { enforceForIfStatements: true }],
       "max-classes-per-file": "warn",
       "no-alert": "warn",
       "no-array-constructor": "warn",
@@ -355,10 +340,7 @@ export const recommended = defineConfig(
       "@typescript-eslint/no-empty-function": "warn",
       "@typescript-eslint/no-extraneous-class": "warn",
       "@typescript-eslint/no-import-type-side-effects": "warn",
-      "@typescript-eslint/no-invalid-void-type": [
-        "warn",
-        { allowAsThisParameter: true },
-      ],
+      "@typescript-eslint/no-invalid-void-type": ["warn", { allowAsThisParameter: true }],
       "@typescript-eslint/no-loop-func": "warn",
       "@typescript-eslint/no-loss-of-precision": "warn",
       "@typescript-eslint/no-meaningless-void-operator": "warn",
@@ -405,10 +387,7 @@ export const recommended = defineConfig(
     },
 
     rules: {
-      "importPlugin/consistent-type-specifier-style": [
-        "warn",
-        "prefer-top-level",
-      ],
+      "importPlugin/consistent-type-specifier-style": ["warn", "prefer-top-level"],
       "importPlugin/first": "warn",
       "importPlugin/newline-after-import": "warn",
       "importPlugin/no-absolute-path": "warn",
@@ -421,10 +400,7 @@ export const recommended = defineConfig(
       "importPlugin/no-named-default": "warn",
       "importPlugin/no-namespace": "warn",
       "importPlugin/no-relative-packages": "warn",
-      "importPlugin/no-unassigned-import": [
-        "warn",
-        { allow: ["**/*.{css,scss,json}"] },
-      ],
+      "importPlugin/no-unassigned-import": ["warn", { allow: ["**/*.{css,scss,json}"] }],
       "importPlugin/no-unused-modules": "warn",
       "importPlugin/no-useless-path-segments": "warn",
       "importPlugin/order": [

@@ -10,10 +10,10 @@ You are working on the `eslint-config-rheactor` project, a shared ESLint configu
   - React (`eslint-plugin-react`, `eslint-plugin-react-hooks`)
   - Next.js (`eslint-config-next`)
   - Unicorn (`eslint-plugin-unicorn`) - Used with `recommended` config but heavily customized for React/TS.
-  - Stylistic (`@stylistic/eslint-plugin`) - Used for formatting rules that Prettier doesn't cover strictly (like padding).
-- **Formatting**: We use **Prettier** for the heavy lifting of code formatting.
-  - Do not enable ESLint rules that conflict with Prettier (e.g., `quotes`, `indent`, `max-len`).
-  - Use `@stylistic` only for logical spacing (e.g., `padding-line-between-statements`) or specific style preferences not enforced by Prettier.
+  - Stylistic (`@stylistic/eslint-plugin`) - Used for formatting rules that oxfmt doesn't cover strictly (like padding).
+- **Formatting**: We use **oxfmt** for the heavy lifting of code formatting.
+  - Do not enable ESLint rules that conflict with oxfmt (e.g., `quotes`, `indent`, `max-len`).
+  - Use `@stylistic` only for logical spacing (e.g., `padding-line-between-statements`) or specific style preferences not enforced by oxfmt.
 
 ## Coding Standards
 

@@ -7,5 +7,5 @@ export function test() {
 }
 
 export function Element() {
-  return <div />
+  return <div />;
 }
