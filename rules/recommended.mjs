@@ -5,7 +5,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
 import { defineConfig } from "eslint/config";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import promise from "eslint-plugin-promise";
 import regexp from "eslint-plugin-regexp";
 import unicorn from "eslint-plugin-unicorn";
