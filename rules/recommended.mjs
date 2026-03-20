@@ -163,6 +163,7 @@ export const recommended = defineConfig(
       "array-callback-return": "warn",
       "getter-return": "warn",
       "no-await-in-loop": "warn",
+      "no-constant-condition": "off", // duplicated with `@typescript-eslint/no-constant-condition`.
       "no-constructor-return": "warn",
       "no-irregular-whitespace": ["warn", { skipStrings: false }],
       "no-promise-executor-return": "warn",
