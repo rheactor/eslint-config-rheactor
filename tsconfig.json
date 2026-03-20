@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "jsx": "react-jsx",
   },
   "include": ["index.d.ts", "fixtures/**/*.ts", "fixtures/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
