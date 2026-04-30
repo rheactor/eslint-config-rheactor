@@ -402,7 +402,6 @@ export const recommended = defineConfig(
       "importPlugin/no-namespace": "warn",
       "importPlugin/no-relative-packages": "warn",
       "importPlugin/no-unassigned-import": ["warn", { allow: ["**/*.{css,scss,json}"] }],
-      "importPlugin/no-unused-modules": "warn",
       "importPlugin/no-useless-path-segments": "warn",
       "importPlugin/order": [
         "warn",
