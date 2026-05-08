@@ -448,7 +448,7 @@ export const recommended = defineConfig(
     files: ["**/*.{ts,tsx}"],
 
     rules: {
-      "regexp/hexadecimal-escape": "warn",
+      "regexp/hexadecimal-escape": ["warn", "never"],
       "regexp/prefer-escape-replacement-dollar-char": "warn",
       "regexp/prefer-lookaround": "warn",
       "regexp/prefer-named-backreference": "warn",
