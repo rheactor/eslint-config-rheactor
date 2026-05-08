@@ -272,7 +272,7 @@ export const recommended = defineConfig(
     rules: {
       "stylistic/padding-line-between-statements": [
         "warn",
-        { blankLine: "any", prev: ["case", "default"], next: ["case", "default"] },
+        { blankLine: "never", prev: ["case", "default"], next: ["case", "default"] },
         { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
         { blankLine: "always", prev: "*", next: "return" },
         { blankLine: "always", prev: "*", next: "block-like" },
@@ -281,14 +281,12 @@ export const recommended = defineConfig(
         { blankLine: "always", prev: "*", next: "function" },
         { blankLine: "always", prev: "*", next: "continue" },
         { blankLine: "always", prev: "*", next: "break" },
-        { blankLine: "always", prev: "*", next: "expression" },
         { blankLine: "always", prev: "block-like", next: "*" },
         { blankLine: "always", prev: "class", next: "*" },
         { blankLine: "always", prev: "directive", next: "*" },
         { blankLine: "always", prev: "export", next: "*" },
         { blankLine: "always", prev: "interface", next: "*" },
         { blankLine: "always", prev: "function", next: "*" },
-        { blankLine: "always", prev: "expression", next: "*" },
       ],
     },
   },
