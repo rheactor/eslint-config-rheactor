@@ -272,10 +272,10 @@ export const recommended = defineConfig(
     rules: {
       "stylistic/padding-line-between-statements": [
         "warn",
-        { blankLine: "never", prev: "case", next: "case" },
-        { blankLine: "never", prev: "case", next: "default" },
-        { blankLine: "never", prev: "default", next: "case" },
-        { blankLine: "never", prev: "default", next: "default" },
+        { blankLine: "any", prev: "case", next: "case" },
+        { blankLine: "any", prev: "case", next: "default" },
+        { blankLine: "any", prev: "default", next: "case" },
+        { blankLine: "any", prev: "default", next: "default" },
         { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
         { blankLine: "always", prev: "*", next: "return" },
         { blankLine: "always", prev: "*", next: "if" },
